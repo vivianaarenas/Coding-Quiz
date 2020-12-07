@@ -1,4 +1,17 @@
 body {
   background-image: url("img.jpg");
   background-size: cover;
+  color: white;
+}
+
+div#test {
+  border: #56e2e4 3px solid;
+  padding: 10px 40px 40px 40px;
+  width: 80%;
+  background-color: #b1dbdc;
+  text-align: center;
+}
+
+.clearfix {
+  overflow: auto;
 }
