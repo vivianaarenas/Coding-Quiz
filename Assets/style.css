@@ -1,10 +1,9 @@
 body {
   background-image: url("img.jpg");
   background-size: cover;
-  color: white;
 }
 
-div#test {
+#test {
   border: #56e2e4 3px solid;
   padding: 10px 40px 40px 40px;
   width: 80%;
@@ -14,4 +13,9 @@ div#test {
 
 .clearfix {
   overflow: auto;
+}
+
+#startButton {
+  background-color: lightblue;
+  text-align: center;
 }
