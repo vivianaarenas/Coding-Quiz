@@ -7,9 +7,15 @@ body {
 }
 
 #scoreBox {
-  color: black;
+  color: white;
+  text-align: center;
 }
-#test {
+#test,
+#rules,
+#question1,
+#question2,
+#question3,
+#question4 {
   border: #56e2e4 3px solid;
   padding: 10px 40px 40px 40px;
   width: 100%;

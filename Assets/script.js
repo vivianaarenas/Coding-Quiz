@@ -1,25 +1,51 @@
-//create variables, includes pos which is what position user is in the test and/or what question they're up to
-var pos = 0;
-var correct = 0;
-var test, test_status, question, choice, choices, chA, chB, chC;
+// * Pseudocoding Coding Quiz
+// A user first sees a title page that introduces the rules of the game,
+// inside the title card page, the user can press the start quiz button which will load the first question
+// first question and answers are displayed,
+// timer is adjusted to remove 10 seconds each time you get an answer wrong
+// go through the questions and the score that remains will be your high school
+// add high score and initials to list, which is saved to a high score list
 
-var test = document.getElementById("test");
+var body = document.body;
 
-const startBtn = document.getElementById("startButton");
+const startButton = document.getElementById("startButton");
+const question1card = document.getElementById("question1");
 
-startButton.addEventListener("click", startBtn);
-
-startButton.addEventListener("click", questions);
-// startButton.addEventListener("click", startTimer);
-startButton.addEventListener("click", () => {
-  messageDiv.textContent = "";
+//make my first button to test out start quiz button
+startButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  alert("You did it!");
 });
-chA.addEventListener("click", choice0);
-chB.addEventListener("click", choice1);
-chC.addEventListener("click", choice2);
 
-startQuiz.onclick = startTimer;
-//array of questions from which the code quiz pulls from, it's an multidimensional array with 4 inner array elements
+// $("#startButton").click(function() {
+//   // Hide the intro and show the game screen
+//   $("#gameIntro").fadeOut(1000);
+
+//create variables, includes pos which is what position user is in the test and/or what question they're up to
+// var pos = 0;
+// var correct = 0;
+// var test, test_status, question, choice, choices, chA, chB, chC;
+
+// var test = document.getElementById("test");
+
+// const startBtn = document.getElementById("startButton");
+
+// // ************** Event Listeners ***************
+// startButton.addEventListener("click", questions);
+// startButton.addEventListener("click", setTime);
+// startButton.addEventListener("click", () => {
+//   messageDiv.textContent = "";
+// });
+// chA.addEventListener("click", choice0);
+// chB.addEventListener("click", choice1);
+// chC.addEventListener("click", choice2);
+
+// startBtn.addEventListener("click", function (event) {
+//   event.preventDefault();
+// });
+
+// startQuiz.onclick = startTimer;
+// //array of questions from which the code quiz pulls from, it's an multidimensional array with 4 inner array elements
 var questions = [
   {
     question: "Arrays in JavaScript can be used to store ______ ",
@@ -53,33 +79,68 @@ var questions = [
   },
 ];
 
-//function in order to get elements for the getElementById function
+// //function in order to get elements for the getElementById function
 
-function get(x) {
-  return document.getElementById(x);
-}
+// function get(x) {
+//   return document.getElementById(x);
+// }
 
-function renderQuestion() {
-  test = get("test");
-  if (pos >= questions.length) {
-    test.innerHTML =
-      "<h2>You got " +
-      correct +
-      "of" +
-      questions.length +
-      "questions correct</h2>";
-    get("test_status").innerHTML = "Test completed"; // resets the variable to allow users to restart the test
-    pos = 0;
-    correct = 0;
-    // stops rest of renderQuestion function running when test is completed
-    return false;
-  }
-}
+// function renderQuestion() {
+//   test = get("test");
+//   if (pos >= questions.length) {
+//     test.innerHTML =
+//       "<h2>You got " +
+//       correct +
+//       "of" +
+//       questions.length +
+//       "questions correct</h2>";
+//     get("test_status").innerHTML = "Test completed"; // resets the variable to allow users to restart the test
+//     pos = 0;
+//     correct = 0;
+//     // stops rest of renderQuestion function running when test is completed
+//     return false;
+//   }
+// }
 
-get("test_status").innerHTML =
-  "Question " + (pos + 1) + " of " + questions.length;
+// get("test_status").innerHTML =
+//   "Question " + (pos + 1) + " of " + questions.length;
 
-question = questions[pos].question;
-chA = questions[pos].a;
-chB = questions[pos].b;
-chC = questions[pos].c;
+// question = questions[pos].question;
+// chA = questions[pos].a;
+// chB = questions[pos].b;
+// chC = questions[pos].c;
+
+// function setTime() {
+//   let timerInterval = setInterval(() => {
+//     time--;
+//     timer.textContent = `Timer: ${time}`;
+
+//     if (time === 0) {
+//       clearInterval(timerInterval);
+//       alert("You ran out of time!");
+//       endGame();
+//     } else if (questionIndex === questions.length) {
+//       clearInterval(timerInterval);
+//     }
+//   }, 1000);
+//   return score;
+// }
+
+// // ************ Select Answer Function *****************
+// function selectAnswer(answer) {
+//   if (
+//     questions[questionIndex].answer === questions[questionIndex].choices[answer]
+//   ) {
+//     messageDiv.textContent = "Correct!";
+//     score += 20;
+//     console.log(score);
+//     correctSound.play();
+//   } else {
+//     messageDiv.textContent = "Incorrect!";
+//     score -= 20;
+//     time -= 10;
+//     incorrectSound.play();
+//   }
+//   questionIndex++;
+//   showNextQuestion();
+// }
