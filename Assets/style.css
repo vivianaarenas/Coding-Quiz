@@ -1,14 +1,22 @@
 body {
   background-image: url("img.jpg");
   background-size: cover;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  font-weight: bold;
 }
 
+#scoreBox {
+  color: black;
+}
 #test {
   border: #56e2e4 3px solid;
   padding: 10px 40px 40px 40px;
-  width: 80%;
-  background-color: #b1dbdc;
+  width: 100%;
+  background-color: #48cacd;
   text-align: center;
+  display: inline-block;
+  font-weight: bold;
 }
 
 .clearfix {
@@ -16,6 +24,6 @@ body {
 }
 
 #startButton {
-  background-color: lightblue;
+  background-color: black;
   text-align: center;
 }
