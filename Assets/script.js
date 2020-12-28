@@ -7,15 +7,113 @@
 // add high score and initials to list, which is saved to a high score list
 
 var body = document.body;
+var secondsEl = document.getElementById("timeLeft");
+
+let currentQuestion = 0;
 
 const startButton = document.getElementById("startButton");
-const question1card = document.getElementById("question1");
+const quizContainer = document.getElementById("quizContainer");
+const questionEl = document.createElement("h2");
+
+//const readyQuiz = document.getElementById("readyQuiz");
+const gameShow = document.getElementById("gameShow");
+const quiz = document.getElementById("quiz");
+//creates a new div element that the questions are going to be shown in,
+const showQuestions = document.createElement("div");
+
+//as we create the element, we declare it up here, but we use it wherever it needs to be used in the function
+
+var questions = [
+  {
+    question: "Arrays in JavaScript can be used to store ______ ",
+    choices: ["Numbers and Strings and Other Arrays", "Booleans", "Both"],
+    //we're doing this to target the index to later get the answer, which will be done with a function in the future
+    answer: "Both",
+    //we're going to match answer,
+    //wait for a click from the user,
+    //and get value from that click,
+    //which will be one of the choices,
+    //and compare if that matches what we have as the correct answer of that choice,
+  },
+  {
+    question: "What does CSS stand for?",
+    choices: [
+      "Common Style Sheet",
+      "Cascading Style Sheet",
+      "Colorful Style Sheet",
+    ],
+    answer: "Cascading Style Sheet",
+  },
+  {
+    question:
+      "The condition in an if/else statement is enclosed within ______.",
+    choices: ["quotes", "square brackets", "curly brackets"],
+    answer: "curly brackets",
+  },
+  {
+    question:
+      "String values must be enclosed within _______ when being assigned to variables.",
+    choices: ["curly brackets", "parenthesis", "quotes"],
+    answer: "curly brackets",
+  },
+];
 
 //make my first button to test out start quiz button
-startButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  alert("You did it!");
-});
+// startButton.addEventListener("click", function (event) {
+//   event.preventDefault();
+//   alert("You did it!");
+// });
+
+// question = questions[pos].question;
+// chA = questions[pos].a;
+// chB = questions[pos].b;
+// chC = questions[pos].c;
+
+var secondsLeft;
+var timerInterval;
+
+function setTime() {}
+
+//whenever you load the page, it's going to load this function init
+function init() {
+  secondsLeft = 60;
+}
+
+init();
+
+function startQuiz() {
+  quizContainer.style.display = "none";
+
+  //quiz.style.display = "block";
+
+  timerInterval = setInterval(function () {
+    secondsLeft--;
+    secondsEl.textContent = secondsLeft;
+    console.log(secondsLeft);
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+  displayQuestion();
+}
+
+startButton.addEventListener("click", startQuiz);
+
+function displayQuestion() {
+  //loop through these questions, and for each question, you're going to make an element for the question itself
+  //for the element, you're going to give value/text content of that elemnt to equal to the question from the questions array
+  //loop through questions, find the title
+}
+// // display a question
+// function displayQuestion() {
+//   let q = questions[currentQuestion];
+
+//   question.innerHTML = "<p>" + q.question + "</p>";
+//   a.innerHTML = q.a;
+//   b.innerHTML = q.b;
+//   c.innerHTML = q.c;
+
+// start quiz
 
 // $("#startButton").click(function() {
 //   // Hide the intro and show the game screen
@@ -44,40 +142,8 @@ startButton.addEventListener("click", function (event) {
 //   event.preventDefault();
 // });
 
-// startQuiz.onclick = startTimer;
-// //array of questions from which the code quiz pulls from, it's an multidimensional array with 4 inner array elements
-var questions = [
-  {
-    question: "Arrays in JavaScript can be used to store ______ ",
-    a: "Numbers and Strings and Other Arrays",
-    b: "Booleans",
-    c: "Both",
-    answer: "C",
-  },
-  {
-    question: "What does CSS stand for?",
-    a: "Common Style Sheet",
-    b: "Cascading Style Sheet",
-    c: "Colorful Style Sheet",
-    answer: "B",
-  },
-  {
-    question:
-      "The condition in an if/else statement is enclosed within ______.",
-    a: "quotes",
-    b: "square brackets",
-    c: "curly brackets",
-    answer: "C",
-  },
-  {
-    question:
-      "String values must be enclosed within _______ when being assigned to variables.",
-    a: "curly brackets",
-    b: "parenthesis",
-    c: "quotes",
-    answer: "A",
-  },
-];
+//startQuiz.onclick = startTimer;
+//array of questions from which the code quiz pulls from, it's an multidimensional array with 4 inner array elements
 
 // //function in order to get elements for the getElementById function
 
@@ -104,11 +170,6 @@ var questions = [
 
 // get("test_status").innerHTML =
 //   "Question " + (pos + 1) + " of " + questions.length;
-
-// question = questions[pos].question;
-// chA = questions[pos].a;
-// chB = questions[pos].b;
-// chC = questions[pos].c;
 
 // function setTime() {
 //   let timerInterval = setInterval(() => {
