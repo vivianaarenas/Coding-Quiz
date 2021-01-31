@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="container">
+        <div id="introPage" style="display:block"> 
+        <p>
+            <h1>Ready for the Minute-Quiz?</h1>
+            <p><h4>Test your knowledge of basic coding in this minute coding quiz. For every question you get wrong, 20 seconds will be deducted from your total time. Your highscore is your remaining time. Have fun! </h4></p>
+      <div id="start">Start Quiz!</div></div>
+      <div id="quiz" style="display: none">
+        <div id="question"></div>
+        <div id="qImg"></div>
+        <div id="choices">
+          <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+          <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+          <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+        </div>
+        <div id="timer">
+          <div id="counter"></div>
+          <div id="btimeGauge"></div>
+          <div id="timeGauge"></div>
+        </div>
+        <div id="progress"></div>
+      </div>
+      <div id="scoreContainer" style="display: none">
+    </div>
+
+    </div>
+
+   
+    
+    </div>
+    <script src="quiz.js"></script>
+  </body>
+</html>
