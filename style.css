@@ -4,7 +4,7 @@ body {
   background-image: url("img/img.jpg");
   background-size: cover;
   font-family: "Courier New", Courier, monospace;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
@@ -23,13 +23,13 @@ body {
   word-break: break-all;
   width: 200px;
   height: 50px;
-  border: 2px solid lightseagreen;
+  border: 2px solid white;
   text-align: center;
   cursor: pointer;
   position: absolute;
   left: 240px;
   top: 300px;
-  color: lightgray;
+  color: black;
 }
 #start:hover {
   border: 3px solid gray;
@@ -81,6 +81,7 @@ body {
 .choice:hover {
   border: 2px solid grey;
   font-weight: bold;
+  color: white;
 }
 
 #timer {
@@ -137,27 +138,27 @@ body {
   display: none;
 }
 #scoreContainer img {
-  /* position: absolute; */
+  position: relative;
   top: 100px;
   left: 325px;
 }
 #scoreContainer p {
-  /* position: absolute; */
+  position: absolute;
   display: block;
-  width: 100px;
+  width: 500px;
   height: 59px;
   top: 130px;
-  left: 325px;
+  left: 115px;
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
 }
 
 #scoreContainer input {
-  /* position: absolute; */
+  /* position: absolute;  */
   top: 50px;
-  width: 200px;
-  color: gray;
+  width: 425px;
+  color: white;
 }
 
 #introPage {
@@ -171,12 +172,14 @@ input {
   height: 50px;
   width: 100%;
   padding: 6px;
-  margin-top: 10px;
+  margin-top: 150px;
   font-size: 2.4em;
   border: none;
+  background-color: gray;
+  color: white;
 }
 
-ul {
+/* ul {
   list-style-type: none;
   padding: 0;
   background-color: white;
@@ -222,4 +225,4 @@ li button:hover {
   width: 800px;
   margin: 0 auto;
   margin-top: 40px;
-}
+} */

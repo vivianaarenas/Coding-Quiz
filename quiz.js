@@ -165,7 +165,7 @@ function scoreRender() {
   <img src='${img}'>
   <div>
     <p>Your score is: ${highScore.score}</p>
-    Enter initials: <input id='initialsInput'>
+          Enter initials: <input id='initialsInput'>
     <button id='SaveHighScore'>Save</button>
   </div>
   `;
